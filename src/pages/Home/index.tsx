@@ -15,10 +15,17 @@ import {
 
 import { Button } from '../../components/Button';
 
+import { useAuth } from '../../hooks/useAuth';
+
 export function Home() {
     const history = useHistory();
+    const { user, signInWithGoogle } = useAuth();
 
-    function navigateToNewRoom() {
+    async function handleCreateRoom() {
+        if (!user) {
+            await signInWithGoogle();
+        }
+
         history.push('/rooms/new');
     }
 
@@ -32,7 +39,7 @@ export function Home() {
             <Main>
                 <Content>
                     <img src={logoImg} alt="Letmeask" />
-                    <CreateRoomBtn onClick={navigateToNewRoom}>
+                    <CreateRoomBtn onClick={handleCreateRoom}>
                         <img src={googleIconImg} alt="Google logo" />
                         Create your room with Google
                     </CreateRoomBtn>

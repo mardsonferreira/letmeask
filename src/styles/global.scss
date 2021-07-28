@@ -7,6 +7,8 @@
 :root {
     --white-primary: #FFF;
     --white-secondary: #f8f8f8;
+    --white-tertiary: #e2e2e2;
+    --white-quaternary: #fefefe;
 
     --purple-primary: #835afd;
 
@@ -16,11 +18,13 @@
     --red-primary: #ea4335;
 
     --pink-primary: #e559f9;
+
+    --dark-primary: #29292e;
 }
 
 body {
-    background: var(--white-primary);
-    color: #29292e;
+    background: var(--white-secondary);
+    color: var(--dark-primary);
 }
 
 body, input, button, textarea {

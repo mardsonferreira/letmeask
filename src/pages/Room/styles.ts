@@ -111,3 +111,7 @@ export const UserInfo = styled.div`
         font-size: 14px;
     }
 `;
+
+export const QuestionList = styled.div`
+    margin-top: 32px;
+`;

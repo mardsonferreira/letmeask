@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import {
     Container,
     Footer,
@@ -10,12 +11,14 @@ type QuestionProps = {
     author: {
         name: string;
         avatar: string;
-    }
+    };
+    children?: ReactNode;
 }
 
 export function Question({
         content, 
-        author
+        author,
+        children
     }: QuestionProps) {
         return (
             <Container>
@@ -25,7 +28,9 @@ export function Question({
                         <img src={author.avatar}  alt={author.name}/>
                         <span>{author.name}</span>
                     </UserInfo>
-                    <div></div>
+                    <div>
+                        {children}
+                    </div>
                 </Footer>
             </Container>
 

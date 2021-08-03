@@ -1,11 +1,8 @@
-import { ButtonHTMLAttributes } from 'react';
-
 import { PrimaryButton } from './styles';
+import { ButtonProps } from './types';
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
-
-export function Button(props: ButtonProps) {
+export function Button( { outlined = false, ...props}: ButtonProps ) {
     return (
-        <PrimaryButton {...props} />
-    )
+        <PrimaryButton className={outlined ? 'outlined' : ''}  {...props} />
+    );
 }

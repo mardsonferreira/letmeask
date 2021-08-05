@@ -78,3 +78,31 @@ export const UserInfo = styled.div`
 export const QuestionList = styled.div`
     margin-top: 32px;
 `;
+
+export const EmptyQuestion = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 128px;
+    gap: 8px;
+
+    img {
+        width: 284px;
+        height: 243px;
+    }
+
+    h2 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--dark-primary);
+    }
+
+    span {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        color: var(--gray-primary);
+    }
+`;

@@ -4,6 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 
 import logoImg from '../../assets/images/logo.svg';
 import deleteImg from '../../assets/images/delete.svg';
+import emptyQuestionsImg from '../../assets/images/empty-questions.svg';
 
 import { useAuth } from '../../hooks/useAuth';
 import { useRoom } from '../../hooks/useRoom';
@@ -22,7 +23,8 @@ import {
     Main,
     Content,
     Title,
-    QuestionList
+    QuestionList, 
+    EmptyQuestion
 } from './styles';
 
 type RoomParams = {
@@ -81,8 +83,9 @@ export function AdminRoom() {
                     <h1>Room {title}</h1>
                     { questions.length && <span>{questions.length} Question(s)</span> }
                 </Title>
-
-                <QuestionList>
+                
+                {questions.length ? (
+                    <QuestionList>
                     {questions.map(question => {
                         return (
                             <Question key={question.id} content={question.content} author={question.author}>
@@ -93,6 +96,13 @@ export function AdminRoom() {
                         )
                     })}
                 </QuestionList>
+                ) : (
+                    <EmptyQuestion>
+                        <img src={emptyQuestionsImg} alt="No questions found"/>
+                        <h2>No questions around here...</h2>
+                        <span>Send this room code to your friends and start answering questions!</span>
+                    </EmptyQuestion>
+                )}
             </Main>
 
             <ModalComponent 

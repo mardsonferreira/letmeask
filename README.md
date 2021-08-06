@@ -3,7 +3,7 @@
 Next Level Week 6 (https://nextlevelweek.com). </p>
 
 <p align="center">
-  <img src="https://github.com/mardsonferreira/letmeask/blob/main/.github/preview.png" />
+  <img src="https://github.com/mardsonferreira/letmeask/blob/main/.github/letmeask.png" />
 </p>
 
 <h2>:hammer: Technologies</h2>

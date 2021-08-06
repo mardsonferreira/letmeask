@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.div.attrs((props) => ({
+    className: props.className,
+}))`
     background: var(--white-quaternary);
     border-radius: 8px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
@@ -12,6 +14,15 @@ export const Container = styled.div`
 
     & + div {
         margin-top: 8px;
+    }
+
+    &.highlighted {
+        background: var(--highlighted);
+        border: 1px solid var(--purple-primary);
+    }
+
+    &.answered {
+        background: var(--gray-tertiary);
     }
 `;
 
@@ -26,9 +37,16 @@ export const Footer = styled.div`
         background: transparent;
         cursor: pointer;
     }
+
+    > div {
+        display: flex;
+        gap: 16px;
+    }
 `;
 
-export const UserInfo = styled.div`
+export const UserInfo = styled.div.attrs((props) => ({
+    className: props.className,
+}))`
     display: flex;
     align-items: center;
 
@@ -42,5 +60,11 @@ export const UserInfo = styled.div`
         margin-left: 8px;
         color: var(--gray-secondary);
         font-size: 14px;
+    }
+
+    &.highlighted {
+        span {
+            color: var(--dark-primary);
+        }
     }
 `;
